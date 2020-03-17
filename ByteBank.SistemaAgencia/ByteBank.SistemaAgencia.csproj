@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Estagiario.cs" />
+    <Compile Include="Foreach-params.cs" />
     <Compile Include="IndexadoresExplicacao.cs" />
     <Compile Include="ListaDeContaCorrente.cs" />
     <Compile Include="Program.cs" />

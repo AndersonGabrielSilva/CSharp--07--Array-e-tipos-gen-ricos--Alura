@@ -12,6 +12,7 @@ namespace ByteBank.SistemaAgencia
         // [null][null][null][null]
         //  ^
         //   `-_proximaPosicao
+    //--------------------------------------------------------------------------------------------------------------------------------------------
             
         private ContaCorrente[] _itens;
 
@@ -26,6 +27,7 @@ namespace ByteBank.SistemaAgencia
                 return _proximaPosicao; 
             } 
         }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
 
         /*Argumento Opcional, o usuario podeou não informar. Casonão informe nada
          ele começara com o seu valor padrao "5"*/
@@ -35,7 +37,7 @@ namespace ByteBank.SistemaAgencia
             _itens = new ContaCorrente[capacidadeInicial];
             _proximaPosicao = 0;
         }
-
+    //--------------------------------------------------------------------------------------------------------------------------------------------
         public void Remover(ContaCorrente item)
         {
             int indiceItem = -1;
@@ -64,6 +66,7 @@ namespace ByteBank.SistemaAgencia
                 _itens[_proximaPosicao] = null;            
             
         }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
 
        public ContaCorrente GetNoIndice(int indice)
         {
@@ -77,6 +80,7 @@ namespace ByteBank.SistemaAgencia
             return _itens[indice];
 
         }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
 
         public void Adicionar( ContaCorrente item)
         {
@@ -86,7 +90,18 @@ namespace ByteBank.SistemaAgencia
             _itens[_proximaPosicao] = item;
             _proximaPosicao++;
         }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
+            public void AdicionarVarios(params ContaCorrente[] contasItens)
+            {
+                //"foreach" = Para cada
+                /*Para cada conta em contaItens*/
+                foreach(ContaCorrente conta in contasItens)
+                {
+                    Adicionar(conta);
+                }
 
+            }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
         private void VerificarCapacidade(int tamanhoNecessario)
         {
             /*Se o "tamanhoNecessario" for menor que o tamanho já estabelecido, ele para a execução do metodo 
@@ -125,6 +140,7 @@ namespace ByteBank.SistemaAgencia
 
         }
 
+        
         /*Criando um indexador, apartir do bloco abaixo tornou possivel o uso de indexadores na classe main
          * desta maneira eu consigo acessar aminha lista como um array. Apenas indicando o indice dela. Sem precisar chamar 
          alista por um metodo.
@@ -140,10 +156,20 @@ namespace ByteBank.SistemaAgencia
 
             }
         }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
 
+        public void Listarcontas()
+        {
+            foreach (ContaCorrente contaLista in _itens)
+            {
+                if (contaLista!=null)
+                {
+                    Console.WriteLine($"Conta: {contaLista.Agencia}/{contaLista.Numero}");
+                }
+            }
+        }
 
-
-
+    //--------------------------------------------------------------------------------------------------------------------------------------------
 
     }
 }

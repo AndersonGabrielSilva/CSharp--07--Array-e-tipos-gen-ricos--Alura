@@ -8,6 +8,33 @@ namespace ByteBank.SistemaAgencia
 {
     class IndexadoresExplicacao
     {
+        /*
+         O que são Indexadores ou Indexers ?
+        "Os Indexadores permitem que as instâncias de uma classe ou estrutura sejam indexadas apenas como vetores.
+        Indexadores lembram properties a não ser que seus acessores recebam parâmetros." 
+
+        Então para que serve mesmo um indexador ?
+        A utilidade é fornecer uma sintaxe para acessar, através do índice, itens de um objeto que represente uma coleção.
+
+        atravez do indexador eu consigo acessar o objeto (struct) diretamente pelo seu indice.
+
+         Sintaxe: 
+        É parecido com a criação de uma propriedade "prop" com a diferenca que logo depois do nome da classe se
+        passa a palavra reservada "this" acompanhada dos [] com o tipo dos indexadores dentro.
+         public ContaCorrente this[int indice]
+            {
+                get 
+                {
+            
+                }
+                set
+                {
+            
+                }
+            }
+         
+         */
+        //--------------------------------------------------------------------------------------------------------------------------------------------
 
         /*Antes de tentarmos acessar os itens da nossa lista da mesma forma que em um array, vamos imaginar como faríamos
          * isso usando outros recursos que já aprendemos.
