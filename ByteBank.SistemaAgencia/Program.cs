@@ -12,27 +12,7 @@ namespace ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            ListaDeContaCorrente lista = new ListaDeContaCorrente(14);
-            ContaCorrente contaAnderson = new ContaCorrente(121212, 121212);           
-            //ContaCorrente[] contas = new ContaCorrente[]
-            //{
-            //    new ContaCorrente(824,45698),
-            //    new ContaCorrente(824,45698),
-            //    new ContaCorrente(824,45698),
-            //    new ContaCorrente(824,45698),
-            //    contaAnderson
-            //};
-            //OU PODEMOS ADICIONAR AS CONTAS CORRENTES DA SEGUINTE MANEIRA
-            lista.AdicionarVarios(contaAnderson, 
-                new ContaCorrente(824, 45698),
-                new ContaCorrente(824, 45698),
-                new ContaCorrente(824, 45698),
-                new ContaCorrente(824, 45698)
-                );
-
-            lista.Listarcontas();
-            Console.WriteLine(SomarVarios(10,10,10,5,2));
-
+            Lista<int> idades = new Lista<int>();
 
             Console.ReadLine();
         }
@@ -133,6 +113,41 @@ namespace ByteBank.SistemaAgencia
                 soma += numero;
             }
             return soma;
+        }
+
+        static void TestaListaContaCorrente()
+        {
+            ListaDeContaCorrente lista = new ListaDeContaCorrente(14);
+            ContaCorrente contaAnderson = new ContaCorrente(121212, 121212);
+            //ContaCorrente[] contas = new ContaCorrente[]
+            //{
+            //    new ContaCorrente(824,45698),
+            //    new ContaCorrente(824,45698),
+            //    new ContaCorrente(824,45698),
+            //    new ContaCorrente(824,45698),
+            //    contaAnderson
+            //};
+            //OU PODEMOS ADICIONAR AS CONTAS CORRENTES DA SEGUINTE MANEIRA
+            lista.AdicionarVarios(contaAnderson,
+                new ContaCorrente(824, 45698),
+                new ContaCorrente(824, 45698),
+                new ContaCorrente(824, 45698),
+                new ContaCorrente(824, 45698)
+                );
+
+            lista.Listarcontas();
+        }
+        static void testaListaDeObject()
+        {
+            ListaDeObject listaDeidades = new ListaDeObject();
+            listaDeidades.AdicionarVarios(10, 5, 4, 10, 45);
+            listaDeidades.Adicionar(10);
+
+            for (int i = 0; i < listaDeidades.Tamanho; i++)
+            {
+                int idade = (int)listaDeidades[i];
+                Console.WriteLine($"Idade no indice {i} : {idade}");
+            }
         }
     }
 }
